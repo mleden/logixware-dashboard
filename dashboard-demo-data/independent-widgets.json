@@ -1,0 +1,31 @@
+{
+	"result": {
+		"layout": "layout5",
+		"data": [
+			{
+				"id": "IND-0001",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static image.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Independent Demo Static Image Widget",
+				"url": "dashboard-demo-widgets/independent-static-image.html"
+			},
+			{
+				"id": "IND-0003",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static long text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Independent Demo Static Long Text Widget",
+				"url": "dashboard-demo-widgets/independent-static-long-text.html"
+			}
+		]
+	}
+}

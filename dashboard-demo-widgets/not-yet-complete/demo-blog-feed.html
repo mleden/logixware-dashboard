@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+-- MWE: This is the Logixware Dashboard Widget Template.
+-- It should be used as the starting point for creating a new Widget.
+!-->
+<html>
+	<head>
+
+		<!-- Load any resources/assets unique to this widget. -->
+		<!-- End -->
+
+		<!-- Initialize any resources/assets unique to this widget. -->
+		<script type="text/javascript">
+			$(function() {
+				var rssFeedUrl = "http://www.cnet.com/rss/news/";
+				/*
+				 * MWE: Note that since this same jsp is used by multiple widgets (with different IDs),
+				 * we need to be a little more precise in loading the contents into the "div container".
+				 * Without the following code, for example, you cannot successfully load the Oracle Press Releases
+				 * and CNET Technology News widgets on your Home view.
+				 */
+				var targetSelector;
+				var widgetId = $("#dashboard").find(".ui-widget").has("div.lgxw-rssfeed").last().attr("id");
+				// Grab the ID for the last "instance" of this widget
+				if ( typeof widgetId != 'undefined') {
+					targetSelector = ".ui-widget#" + widgetId + " div.lgxw-rssfeed";
+				} else {
+					// viewing widget from LINK page (i.e., no dashboard)
+					targetSelector = ".lgxw-rssfeed";
+				}
+				$(targetSelector).rssfeed(rssFeedUrl, {
+					limit : 5,
+					snippet : false,
+					content : false,
+					linktarget : '_blank'
+				});
+			});
+		</script>
+		<!-- End -->
+
+	</head>
+
+	<body>
+		<!-- Much of the "widget markup" is maintained in the templates for simplicity. -->
+		<div class="box-body">
+			<div class="lgxw-rssfeed">
+				<!-- populated dynamically by jQuery plugin -->
+			</div>
+		</div><!-- /.box-body -->
+		<div class="box-footer clearfix no-border">
+		</div>
+	</body>
+
+</html>

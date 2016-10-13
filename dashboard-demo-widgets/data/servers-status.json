@@ -1,0 +1,58 @@
+{ "serverStatus": [
+ { "server":  "w5c-x4450a.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-x4450b.us.oracle.com",
+    "status":  "RED",
+    "summary": " (1) 1 system fault(s) have occurred. Connect to ILOM UI for futher details; (2) 2 file systems are running out of space. Run tdu command on system for details;"
+  }
+ ,{ "server":  "w5c-x4450c.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-x4450d.us.oracle.com",
+    "status":  "YELLOW",
+    "summary": " (1) CPU load average above 2 for more than 15 minutes. Run prstat command on system for details;"
+  }
+ ,{ "server":  "w5c-t5440a.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-t5440b.us.oracle.com",
+    "status":  "RED",
+    "summary": " (1) 1 system fault(s) have occurred. Connect to ILOM UI for futher details;"
+  }
+ ,{ "server":  "w5c-t4a.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-t4b.us.oracle.com",
+    "status":  "RED",
+    "summary": " (1) 4 system fault(s) have occurred. Connect to ILOM UI for futher details;"
+  }
+ ,{ "server":  "w5c-x4a.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-x4b.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "dshidden-new.us.oracle.com",
+    "status":  "RED",
+    "summary": " (1) 1 system fault(s) have occurred. Connect to ILOM UI for futher details;"
+  }
+ ,{ "server":  "w5c-t2000a.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "w5c-v490b.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+ ,{ "server":  "zimbu.us.oracle.com",
+    "status":  "GREEN",
+    "summary": ""
+  }
+] }

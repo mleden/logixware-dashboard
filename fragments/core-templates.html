@@ -1,0 +1,68 @@
+<script type="text/html" id="categorytemplate">
+	<li id="<%= id %>" class="selectcategory"><button class="btn"><%= title %> (<%= amount %>)</button></li>
+</script>
+
+<script type="text/html" id="widgettemplate-with-header">
+	<div class="box widget" id="<%= id %>" title="<%= title %>">
+		<div class="box-header widgetheader">
+			<i class="fa fa-puzzle-piece"></i>
+			<span class="box-title widgettitle"><%= title %></span>
+			<!-- tools box -->
+			<span class="box-tools widgettools pull-right">
+				<button class="btn btn-sm widgetopenfullscreen" data-toggle="tooltip" title="Maximize/Nomalize Widget">
+					<i class="fa fa-expand"></i>
+				</button>
+				<!-- button with a dropdown -->
+				<div class="btn-group">
+					<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" title="Widget Menu">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="dropdown-menu pull-right" role="menu">
+						<li class="widgetCollapse" data-toggle="tooltip" title="Collapse Widget">
+							<a href="#"><i class="fa fa-minus"></i>Collapse</a>
+						</li>
+						<li class="widgetExpand" data-toggle="tooltip" title="Expand Widget">
+							<a href="#"><i class="fa fa-plus"></i>Expand</a>
+						</li>
+						<li class="widgetDelete" data-toggle="tooltip" title="Remove Widget">
+							<a href="#"><i class="fa fa-remove"></i>Delete</a>
+						</li>
+						<li class="widgetRefresh" data-toggle="tooltip" title="Refresh Widget">
+							<a href="#"><i class="fa fa-refresh"></i>Refresh</a>
+						</li>
+						<li class="widgetAbout" data-toggle="tooltip" title="About Widget">
+							<a href="#"><i class="fa fa-info"></i>About</a>
+						</li>
+					</ul>
+				</div>
+			</span><!-- /. tools -->
+		</div><!-- /.box-header -->
+		<div class="widgetcontent">
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="widgettemplate-minimal">
+	<div>
+		<div class="widgetcontent">
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="selectlayouttemplate">
+	<li class="layoutchoice" id="<%= id %>" style="background-image: url('<%= image %>')"></li>
+</script>
+
+<script type="text/html" id="addwidgettemplate">
+	<li class="widgetitem">
+		<img src="<%= image %>" alt="" height="60" width="120">
+		<div class="add-button">
+				<input class="macro-button-add addwidget" id="addwidget<%= id %>" value="Add it Now" type="button"><br>
+				<input class="macro-hidden-uri" value="<%= url %>" type="hidden">
+		</div>
+		<!-- // .add-button -->
+		<h3><%= title %></h3>
+		<p>By <%= creator %></p>
+		<p><%= description %></p>
+	</li>
+</script>

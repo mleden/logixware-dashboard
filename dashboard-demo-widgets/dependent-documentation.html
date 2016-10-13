@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+-- MWE: This is the Logixware Dashboard Widget Template.
+-- It should be used as the starting point for creating a new Widget.
+!-->
+<html>
+	<head>
+		<!-- Initialize any resources/assets unique to this widget. -->
+		<script type="text/javascript">
+		</script>
+		<!-- End -->
+	</head>
+
+	<body>
+		<!-- Much of the "widget markup" is maintained in the templates for simplicity. -->
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    	Download and Install
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+						For a no-fuss install follow these directions:
+						<ol>
+							<li>
+								Copy entire logixware-framework directory to webroot of target server/domain.
+							</li>
+							<li>
+								Point your browser to /lgxw-pages/demo.html and verify that the page renders without browser console errors.
+							</li>
+							<li>
+								Copy /lgxw-pages/demo.html to your "pages directory" (e.g., /pages).
+							</li>
+							<li>
+								Point your browser to the copied demo.html (e.g., /pages/demo.html) and verify that the page renders without browser console errors.
+							</li>
+							<li>
+								Start "building out your content" by copying (and modifying) /pages/demo.html and copying (and modifying) /lgxw-data files.
+							</li>
+						</ol>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    	Logixware Dashboard Plugin Architecture
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+						This plugin is largely based upon the architecture implemented in Mark Machielsen's Dashboard Plugin.
+						Please see his comprehensive documentation for details on the use of "High Level Events" and "Clientside Templating".
+						<br />
+						For more details, please see:
+						<br />
+						<a>http://connect.gxsoftware.com/dashboardplugin/demo/dashboard.html</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    	Logixware Dashboard Layouts
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+						<p>
+							The application developer -- and by extension the end-user -- has access to the following 5 "dashboard layouts":
+						</p>
+						<ul class="layoutselection">
+							<li class="layoutchoice" id="layout1" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout1.png')">
+								layout1
+							</li>
+							<li class="layoutchoice" id="layout2" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout2.png')">
+								layout2
+							</li>
+							<li class="layoutchoice" id="layout3" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout3.png')">
+								layout3
+							</li>
+							<li class="layoutchoice" id="layout4" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout4.png')">
+								layout4
+							</li>
+							<li class="layoutchoice" id="layout5" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout5.png')">
+								layout5
+							</li>
+						</ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                    	Logixware Dashboard Widgets and Features
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+						Each widget  of three architecture values:
+						<ol>
+							<li>
+								DEPENDENT
+							</li>
+							The first is a widget that uses resources loaded by the enclosing page.
+							<li>
+								INDEPENDENT
+							</li>
+							The second is a widget that loads its own resources.
+							<li>
+								EXTERNAL
+							</li>
+							The third is a (pre-existing) site or page that, by definition, loads its own resources.
+						</ol>
+						<p>
+							Because of the implications of loading resources, the second and third are rendered in an iframe.
+							To convey this to the Logixware Dashboard Plugin, we employ a variation on the "standard" JSON format required by the plugin.
+							In particular, JSON attributes that are "non-native to the plugin", must be placed in the JSON record's "metadata".
+						</p>
+						<p>
+							Create "custom widgets" in /widgets, either from scratch or by copying and modifying the demo widgets.
+						</p>
+						Each widget "inherits" the following functionality:
+						<ol>
+							<li>
+								Widget Header
+							</li>
+							Represents standard functionality including a title, controls and widget menu.
+							<li>
+								Widget Body
+							</li>
+							Represents premary data/functionality unique to this widget.
+							<li>
+								(Optional) Widget Footer
+							</li>
+							Represents secondary functionality unique to this widget.
+						</ol>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+	</body>
+</html>

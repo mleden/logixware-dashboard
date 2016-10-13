@@ -1,0 +1,18 @@
+{
+	"categories": {
+		"category": [
+			{
+				"id": 1,
+				"title": "Dependent Widgets",
+				"amount": 3,
+				"url": "dashboard-demo-data/dependent-widgets.json"
+			},
+			{
+				"id": 2,
+				"title": "Independent Widgets",
+				"amount": 2,
+				"url": "dashboard-demo-data/independent-widgets.json"
+			}
+		]
+	}
+}

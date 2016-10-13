@@ -1,0 +1,91 @@
+{
+	"result": {
+		"layout": "layout5",
+		"data": [
+			{
+				"id": "DEP-0001",
+				"architecture": "DEPENDENT",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "Dependent widget that provides welcome info for the logixware-dashboard plugin.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Welcome",
+				"url": "dashboard-demo-widgets/dependent-welcome.html"
+			},
+			{
+				"id": "DEP-0002",
+				"architecture": "DEPENDENT",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "Dependent widget that documents the logixware-dashboard plugin.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Documentation",
+				"url": "dashboard-demo-widgets/dependent-documentation.html"
+			},
+			{
+				"id": "EXT-0001",
+				"architecture": "EXTERNAL",
+				"column": "second",
+				"creator": "Logixware",
+				"description": "External widget that wraps livesoccertv.com.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo livesoccertv.com",
+				"url": "http://www.livesoccertv.com/"
+			},
+			{
+				"id": "EXT-0002",
+				"architecture": "EXTERNAL",
+				"column": "second",
+				"creator": "Logixware",
+				"description": "External widget that wraps logixware.com.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo logixware.com",
+				"url": "http://www.logixware.com/"
+			},
+			{
+				"id": "IND-0002",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Static Text",
+				"url": "dashboard-demo-widgets/independent-static-text.html"
+			},
+			{
+				"id": "IND-0004",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static DataTables table.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Static DataTables",
+				"url": "dashboard-demo-widgets/independent-static-datatables.html"
+			},
+			{
+				"id": "IND-0005",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Independent widget that includes JSON-based DataTables table.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo JSON-based DataTables",
+				"url": "dashboard-demo-widgets/independent-json-datatables.html"
+			}
+		]
+	}
+}

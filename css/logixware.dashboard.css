@@ -1,0 +1,455 @@
+/*
+ * IMPORTANT: Something in here appears to contribute to enabling the Edit Layout functionality.
+ */
+
+/*
+ * DASHBOARD LAYOUTS & COLUMNS
+ */
+
+/* 
+ * This content rule was copied verbatim from AdminLTE stylesheet. 
+ */
+.content {
+  padding: 20px 15px;
+  background: #f9f9f9;
+  overflow: auto;
+}
+
+/*
+ * All layouts, all columns
+ */
+
+.column {
+	float: left;
+	min-height: 1500px;
+}
+
+/*
+ * Next rule "sets column marquee" when dragging and dropping widgets between columns.
+ */
+.selectedcolumn {
+  border: 3px dashed #aaaaaa;
+}
+/*
+ * layout-a
+ */
+.layout-a .column.first {
+	width: 100%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+.layout-a .column.second, .layout-a .column.third {
+	display: none;
+}
+
+/*
+ * layout-aa
+ */
+.layout-aa .column.first, .layout-aa .column.second {
+	width: 50%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.layout-aa .column.third {
+	display: none;
+}
+
+/*
+ * layout-ba
+ */
+.layout-ba .column.first {
+	width: 33%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.layout-ba .column.second {
+	width: 66%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.layout-ba .column.third {
+	display: none;
+}
+
+/*
+ * layout-ab
+ */
+.layout-ab .column.first {
+	width: 66%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.layout-ab .column.second {
+	width: 33%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.layout-ab .column.third {
+	display: none;
+}
+
+/*
+ * layout-aaa
+ */
+.layout-aaa .column.first, .layout-aaa .column.second, .layout-aaa .column.third {
+	width: 33%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.emptycolumn {
+	font-size: 20px;
+	font-weight: bold;
+	color: #aaaaaa;
+	padding: 5px 5px 5px 5px;
+}
+
+/*
+ * DASHBOARD WIDGETS
+ * 
+ * Here I copied the rules from AdminLTE and substituted in the corresponding class name from the original dashboard plugin.
+ * By doing this, I get the nice styling that AdminLTE provides without the inclusion of the entire AdminLTE stylesheet.
+ * This means that we can view the AdminLTE stylesheet as a "skin" that can be wrapped around the entire Logixware Framework
+ * at the next level of abstraction.
+ * Examples of classname substitution:
+ * box -> widget
+ * box-header -> widgetheader
+ * box-body -> widgetcontent
+ */
+.widget {
+  position: relative;
+  background: #ffffff;
+  border-top: 2px solid #c1c1c1;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.widget .widgetheader {
+  position: relative;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0px solid #f4f4f4;
+  color: #444;
+}
+.widget .widgetheader:before,
+.widget .widgetheader:after {
+  display: table;
+  content: " ";
+}
+.widget .widgetheader:after {
+  clear: both;
+}
+.widget .widgetheader > .fa,
+.widget .widgetheader > .glyphicon,
+.widget .widgetheader > .ion,
+.widget .widgetheader .widgettitle {
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  float: left;
+  cursor: default;
+}
+.widget .widgetheader a {
+  color: #444;
+}
+.widget .widgetheader > .widgettools {
+  padding: 5px 10px 5px 5px;
+}
+.widget .widgetheader {
+  position: relative;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0px solid #f4f4f4;
+  color: #444;
+}
+.widget .widgetheader:before,
+.widget .widgetheader:after {
+  display: table;
+  content: " ";
+}
+.widget .widgetheader:after {
+  clear: both;
+}
+.widget .widgetheader > .fa,
+.widget .widgetheader > .glyphicon,
+.widget .widgetheader > .ion,
+.widget .widgetheader .widgettitle {
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  float: left;
+  cursor: default;
+}
+.widget .widgetheader a {
+  color: #444;
+}
+.widget .widgetheader > .widgettools {
+  padding: 5px 10px 5px 5px;
+}
+.widget .widgetheader > .widgettools {
+  padding: 5px 10px 5px 5px;
+}
+
+.widget .widgetcontent {
+  padding: 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.widget .widgetcontent > table,
+.widget .widgetcontent > .table {
+  margin-bottom: 0;
+}
+.widget .widgetcontent .table {
+  margin-bottom: 0;
+}
+
+
+
+/*
+ * Next rule prevents content spilling out of widget container, yet
+ * still allows the widget menus to open, even when the widget is collapsed
+ * and/or at the foot of a dashboard column.
+ */
+.widgetcontent {
+	overflow: hidden;
+}
+
+/*
+ * These dropdown rules were copied verbatim from AdminLTE stylesheet.
+ */ 
+/*Dropdowns in general*/
+.dropdown-menu {
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2300;
+}
+.dropdown-menu > li > a > .glyphicon,
+.dropdown-menu > li > a > .fa,
+.dropdown-menu > li > a > .ion {
+  margin-right: 10px;
+}
+.dropdown-menu > li > a:hover {
+  background-color: #3c8dbc;
+  color: #f9f9f9;
+}
+
+/*
+ * DASHBOARD EDIT LAYOUT DIALOG
+ */
+#layout-dialog .selected {
+	background: no-repeat scroll 0px -51px transparent;
+}
+#layout-dialog .layoutchoice {
+	float: left;
+	list-style-type: none;
+	margin: 5px;
+	padding: 0;
+	width: 82px;
+	height: 51px;
+}
+#layout-dialog ul {
+	margin: 0;
+	padding: 0;
+}
+#layout-dialog ul li a, #layout-dialog ul li a:link, #layout-dialog ul li a:visited {
+	border: 1px solid #BBBBBB;
+	display: block;
+	float: left;
+	margin: 0 1em 1em 0;
+	outline: medium none;
+	padding: 0.35em;
+	width: auto;
+}
+
+/*
+ * DASHBOARD ADD WIDGET DIALOG
+ */
+.dialog .categories {
+	list-style: none outside none;
+	height: 414px;
+}
+.dialog .categories li.selected button {
+	color: #FFFFFF;
+	font-weight: 800;
+}
+.dialog .categories li button {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	color: #666666;
+	font-family: "segoe ui", helvetica, arial, sans-serif;
+	font-size: 0.8em;
+	padding: 0.4em 1.2em;
+	text-align: left;
+	width: 100%;
+}
+ul.categories button {
+	cursor: pointer;
+}
+.widgetitem {
+	border: 2px none white;
+	float: left;
+	font-size: 0.77em;
+	margin: 0;
+	overflow: hidden;
+	padding: 0 20px 0 142px;
+	width: 352px; /* Resize region on Add Widget dialog to allow for longer descriptions. */
+	height: 182px; /* Resize region on Add Widget dialog to allow for longer descriptions. */
+}
+.dialog .categories {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-right: 1px solid #F0F0F0;
+	float: left;
+	list-style: none outside none;
+	margin: 0 1.17em 0 0;
+	padding: 10px 0 0;
+	width: 25%;
+	height: 100%;
+}
+.dialog .categories li.selected {
+	background: none repeat scroll 0 0 #6699CC;
+	color: #FFFFFF;
+}
+.dialog .panel-body {
+	overflow: auto;
+	padding: 10px;
+}
+ol.widgets {
+	float: left;
+	list-style: none outside none;
+	margin: -10px;
+	padding: 0;
+	width: auto;
+}
+.widgetitem .add-button {
+	float: left;
+	margin: 81px 0 0 -131px;
+	width: auto;
+}
+.widgetitem h3 {
+	margin: 11px 0 0;
+	padding: 0;
+}
+.widgetitem img {
+	border: 1px solid #999999;
+	float: left;
+	margin: 10px 0 0 -132px;
+}
+
+/*
+ * ???
+ */
+.ui-icon {
+	cursor: default;
+}
+.ui-icon {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+/*
+ * I fully qualified the following paths to image files.
+ * It shouldn't really be necessary, but I had trouble with it otherwise.
+ */
+.loading {
+	padding: 50px;
+	text-align: center;
+	background-image: "../lgxw-libs/jq-logixware-dashboard/img/loading.gif";
+}
+.hidden {
+	display: none;
+}
+
+.ui-button-text {
+	padding: 0.1em 0.7em !important;
+}
+
+/*
+ * Rule to mimic Bootstrap2's coloring of anchor tags.
+ * Without these, the blue text on the link would show when the widget was rendered "in single view"
+ * from the widgets menu but it would render in "standard gray" and be indistinguishable when the widget
+ * was rendered from with a view.
+ */
+/*
+ .ui-widget-content a {
+ color: #0069d6;
+ }
+ */
+
+/*
+ * This rule is applied to INDEPENDENT architecture widgets to "counteract" the widgetcontent class and eliminate
+ * the border around the iframe wrapper within the widget content region.
+ */
+.widgetcontent-independent {/* padding of the content */
+	padding: 0px 0px;
+}
+
+/*
+ * This rule ensures that when a widget is maximized, it is
+ * properly centered on the dashboard.
+ */
+.dashboard > .columnmaximize {
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+#fullscreen_dashboard {
+	/*
+	 position: fixed !important;
+	 position: absolute;
+	 */
+	overflow: auto;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+}
+
+#fullscreen_dashboard .iframewidgetcontent {
+	min-height: 800px;
+}
+
+.iframewidgetcontent {
+	border: none;
+	min-height: 400px;
+	width: 100%;
+}

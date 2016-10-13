@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+-- MWE: This is the Logixware Dashboard Widget Template.
+-- It should be used as the starting point for creating a new Widget.
+!-->
+<html>
+	<head>
+		<!-- Load any resources/assets unique to this widget. -->
+
+		<!-- jQuery core assets from CDN -->
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js" integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
+
+		<!-- Bootstrap 3 assets from CDN -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- jQ DataTables assets -->
+		<link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+		
+		<script src="../js/logixware.dashboard.datatables.js" type="text/javascript"></script>
+
+		<!-- End -->
+
+		<!-- Initialize any resources/assets unique to this widget. -->
+		<script type="text/javascript" charset="utf-8">
+			/*
+			 * MWE: Declare standard widget-scoped variables.
+			 */
+			var thisWidgetName = "Json DataTables Example";
+			/*
+			 * MWE: Declare custom widget-scoped variables.
+			 */
+			var serversDataTableJsonUrl = "../dashboard-demo-widgets/data/allServersServices.json";
+			// Url to JSON generated from DB
+			var serversStatusJsonUrl = "../dashboard-demo-widgets/data/servers-status.json";
+			// Url to "servers status file" in JSON format (see Fred for details)
+			var serversStatusJson = {};
+			// object variable to hold servers status JSON object for searching
+			var serversZonesJsonUrl = "../dashboard-demo-widgets/data/serverZones.json";
+			// Url to "servers zones" in JSON format
+			var serversZonesJson = {};
+			// object variable to hold servers zones JSON object for searching
+			var systemArchitectureChart = null;
+			var serverLoadChart = null;
+
+			$(document).ready(function() {
+				/*
+				 * MWE: Initialize plugins and custom objects implemented by this widget.
+				 */
+				console.log("document.ready of " + thisWidgetName);
+				$(".box-title:empty").html(thisWidgetName);
+				/*
+				 * MWE: Retrieve "servers status file".
+				 * A server-side script generates the file which contains
+				 * real-time "meta data" about the "health" of each server.
+				 * This "health meta data" is rendered in the widget
+				 * as a simple Green/Yellow/Red/Gray flag
+				 * for easy identification of potential issues.
+				 */
+				getServersStatus();
+			});
+
+			/*
+			 * MWE: Define custom functions used by this widget.
+			 */
+			function getServersStatus() {
+				/*
+				 * Get  data" from the "servers status file".
+				 * This will be merged with "inventory database" to build the Data Table.
+				 */
+				$.ajax({
+					async : true,
+					dataType : "json",
+					url : serversStatusJsonUrl,
+					success : function(data) {
+						serversStatusJson = data;
+						getServersZones();
+					},
+					error : function(request, status, error) {
+						console.log("Error getting Servers Status data:" + request.responseText);
+						alert("The Servers and Services widget could not get the Servers Status data.  See browser console for more information.");
+					}
+				});
+			}
+
+			function getServersZones() {
+				/*
+				 * Get  data" from the "servers zones".
+				 * This will be merged with "inventory database" to build the Data Table.
+				 */
+				$.ajax({
+					async : true,
+					dataType : "json",
+					url : serversZonesJsonUrl,
+					success : function(data) {
+						serversZonesJson = data;
+						buildServersDataTable();
+					},
+					error : function(request, status, error) {
+						console.log("Error getting Servers Zones data:" + request.responseText);
+						alert("The Servers and Services widget could not get the Servers Zones data.  See browser console for more information.");
+					}
+				});
+			}
+
+			function buildServersDataTable() {
+				var thisDataTableId = "servers-datatable";
+				var thisDataTableSelector = "#" + thisDataTableId;
+				var oTable = $(thisDataTableSelector).dataTable({
+					"aoColumns" : [{
+						"sTitle" : "Server"
+					}, // original
+					{
+						"sTitle" : "Server Name<br />&nbsp;Service Name"
+					}, // original
+					{
+						"sTitle" : "Version"
+					}, // original
+					{
+						"sTitle" : "Account"
+					}, // original
+					{
+						"sTitle" : "Environment"
+					}, // original
+					{
+						"sTitle" : "Comments"
+					}, // original
+					{
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "Model"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "Serial"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "Location"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "Server Comments"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "URL"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "Memory"
+					}, {
+						"sClass" : "datatables-pseudo-hide",
+						"sTitle" : "CPU Count"
+					}],
+					"bAutoWidth" : false,
+					"bDestroy" : true, /* this sort of gets things to work, after repeated reloads, but what does it do and why is it needed ??? */
+					"bJQueryUI" : false, /* use jQuery UI styling */
+					"bLengthChange" : false,
+					"bPaginate" : false, /* since we are using column grouping, MUST turn off pagination */
+					"bProcessing" : true,
+					"fnDrawCallback" : function() {
+						addDataTablesGroupCount(thisDataTableSelector, " -- hosted services: ");
+					},
+					"fnInitComplete" : function() {
+						addDataTablesExpandCollapseAllButton(thisDataTableSelector);
+					},
+					"fnRowCallback" : function(nRow, aData, iDisplayIndex) {
+						/*
+						 * Check Url value from the database...if we have something make it an hlink...
+						 */
+						if ( typeof aData[10] !== 'undefined' && aData[10] !== null && aData[10] !== "") {
+							$('td:eq(0)', nRow).html('<a href="' + aData[10] + '" target="_blank">' + aData[1] + '&nbsp;<span class="glyphicon glyphicon-new-window"></span></a>');
+						}
+						return nRow;
+					},
+					"oLanguage" : {
+						"sInfo" : "Showing _START_ to _END_ of _TOTAL_ services",
+						"sInfoEmpty" : "No services to show"
+					},
+					"sAjaxSource" : serversDataTableJsonUrl
+				}).rowGrouping({
+					"asExpandedGroups" : [],
+					"bExpandableGrouping" : true,
+					"bHideGroupingColumn" : true,
+					"iGroupingColumnIndex" : 0,
+					"fnOnGrouped" : function() {
+						/*
+						 * Iterate over each "group row" and "decorate" it with the appropriate icons.
+						 */
+						$(thisDataTableSelector + " td.group").each(function(index, element) {
+							var thisGroup = $(this).text();
+							/*
+							 * Get the subsequent "detail row", since that has all of the required data.
+							 */
+							var detailRow = $(this).parent("tr").next("tr");
+							//
+							$(this).html(getGroupIconMarkup("SERVER-STATUS", thisGroup, detailRow, serversStatusJson) + getGroupIconMarkup("SERVER-ZONES", thisGroup, detailRow, serversZonesJson) + getGroupIconMarkup("SERVER-INFO", thisGroup, detailRow, null) + "&nbsp;" + $(this).text());
+						});
+					}
+				});
+				/*
+				 * MWE: In addition to initializing "info tooltip" in the DataTables fnInitComplete, I needed to add live event here.
+				 * It seems that without the latter, each time the widget filter is used, I would "lose" the "info tooltip".
+				 */
+				$(thisDataTableSelector).on("mouseover", function() {
+					addIconTooltip(thisDataTableSelector);
+				});
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="box-body">
+			<!-- Begin unique widget markup -->
+			<div id="expandable-table-tab">
+				<table class="display table table-striped table-condensed" id="servers-datatable">
+					<tbody>
+						<tr>
+							<td colspan="6" class="dataTables_empty">Loading data from server</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- End unique widget markup -->
+		</div><!-- /.box-body -->
+		<div class="box-footer clearfix no-border">
+			<!-- Begin unique widget markup -->
+			<!-- End unique widget markup -->
+		</div>
+
+	</body>
+
+</html>

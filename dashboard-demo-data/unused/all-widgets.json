@@ -1,0 +1,91 @@
+{
+	"result": {
+		"layout": "layout5",
+		"data": [
+			{
+				"id": "1",
+				"architecture": "EXTERNAL",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "External widget that wraps livesoccertv.com.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "External Demo livesoccertv.com Widget",
+				"url": "http://www.livesoccertv.com/"
+			},
+			{
+				"id": "2",
+				"architecture": "EXTERNAL",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "External widget that wraps Logixware.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "External Demo Logixware Widget",
+				"url": "http://www.logixware.com"
+			},
+			{
+				"id": "3",
+				"architecture": "INDEPENDENT",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Independent Demo Static Text Widget",
+				"url": "dashboard-demo-widgets/independent-static-text.html"
+			},
+			{
+				"id": "4",
+				"architecture": "INDEPENDENT",
+				"column": "second",
+				"creator": "Logixware",
+				"description": "Independent widget that includes static long text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Independent Demo Static Long Text Widget",
+				"url": "dashboard-demo-widgets/independent-static-long-text.html"
+			},
+			{
+				"id": "5",
+				"architecture": "DEPENDENT",
+				"column": "second",
+				"creator": "Logixware",
+				"description": "Dependent widget that includes static text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Dependent Demo Static Text Widget",
+				"url": "dashboard-demo-widgets/dependent-static-text.html"
+			},
+			{
+				"id": "6",
+				"architecture": "DEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Dependent widget that includes static long text.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Dependent Demo Static Long Text Widget",
+				"url": "dashboard-demo-widgets/dependent-static-long-text.html"
+			},
+			{
+				"id": "7",
+				"architecture": "DEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
+				"description": "Dependent widget that includes static image.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Dependent Demo Static Image Widget",
+				"url": "dashboard-demo-widgets/dependent-static-image.html"
+			}
+		]
+	}
+}
