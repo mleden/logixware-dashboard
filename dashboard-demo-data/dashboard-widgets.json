@@ -25,6 +25,18 @@
 				"open": true,
 				"title": "Demo Documentation",
 				"url": "dashboard-demo-widgets/dependent-documentation.html"
+			}, 
+			{
+				"id": "DEP-0003",
+				"architecture": "DEPENDENT",
+				"column": "first",
+				"creator": "Logixware",
+				"description": "Dependent widget that displays version file.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Version",
+				"url": "version"
 			},
 			{
 				"id": "EXT-0001",
