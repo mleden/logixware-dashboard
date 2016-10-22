@@ -29,7 +29,7 @@
 		var logixwareDashboard = {};
 		var loading;
 		var widgetDirectoryUrl;
-		logixwareDashboard.layout
+		logixwareDashboard.layout;
 		logixwareDashboard.element = this;
 		logixwareDashboard.id = this.attr("id");
 		logixwareDashboard.widgets = {};
@@ -42,6 +42,7 @@
 		// Public methods
 		logixwareDashboard.serialize = function() {
 			logixwareDashboard.log("entering serialize function", 1);
+//			var r = '{"layout": "' + dashboard.layout.id + '", "data" : [';
 			var r = '{"layout": "' + logixwareDashboard.layout.id + '", "data" : [';
 			// add al widgets in the right order
 			var i = 0;
@@ -60,7 +61,7 @@
 			});
 			r += ']}';
 			return r;
-		}
+		};
 
 		logixwareDashboard.log = function(msg, level) {
 			if (level >= opts.debuglevel && typeof console != 'undefined') {
@@ -75,7 +76,7 @@
 					l = 'ERROR';
 				console.log(l + ' - ' + msg);
 			}
-		}
+		};
 
 		logixwareDashboard.setLayout = function(layout) {
 			if (layout != null) {
@@ -150,14 +151,15 @@
 			// trigger the dashboardLayoutLoaded event
 			logixwareDashboard.log('dashboardLayoutLoaded event thrown', 2);
 			logixwareDashboard.element.trigger("dashboardLayoutLoaded");
-		}
+		};
+
 		// This is a workaround for the following problem: when I drag a widget from column2 to column1, sometimes the widget is
 		// moved to column3, which is not visible
 		function fixSortableColumns() {
 			logixwareDashboard.log('entering fixSortableColumns function', 1);
 			$('.nonsortablecolumn').removeClass('nonsortablecolumn').addClass(opts.columnClass);
 			$('.' + opts.columnClass).filter(function() {
-				return $(this).css("display") == 'none'
+				return $(this).css("display") == 'none';
 			}).addClass('nonsortablecolumn').removeClass(opts.columnClass);
 		}
 
@@ -167,7 +169,7 @@
 			var s = classes.split(" ");
 			for (var i = 0; i < s.length; i++) {
 				if (s[i].indexOf(opts.columnPrefix) === 0) {
-					r = s[i]
+					r = s[i];
 				};
 			};
 			return r.replace(opts.columnPrefix, '');
@@ -307,7 +309,7 @@
 			// Handle "open edit layout" event.
 			$(document).on("dashboardOpenLayoutDialog", "body", function(e, o) {
 				logixwareDashboard.log("Opening dialog " + layoutOpts.dialogId, 1);
-				// add the layout images
+				// add the layout images to the template
 				var h = $("#" + layoutOpts.dialogId).find("." + layoutOpts.layoutClass);
 				h.empty();
 				if (h.children().length == 0) {
@@ -319,11 +321,10 @@
 						h.append(tmpl($("#" + layoutOpts.layoutTemplate).html(), item));
 					});
 				}
-				// set the selected class for the selected layout
-				$("." + layoutOpts.selectLayoutClass).removeClass(layoutOpts.selectedLayoutClass);
-				$("#" + logixwareDashboard.layout.id).addClass(layoutOpts.selectedLayoutClass);
 				bindSelectLayout();
 				if (opts.uiFramework === "bootstrap3") {
+					// add the "selected" class to the image representing the selected layout
+					$("#" + layoutOpts.dialogId).find("#" + logixwareDashboard.layout.id).addClass(layoutOpts.selectedLayoutClass);
 					$("#" + layoutOpts.dialogId).modal();
 				}
 			});
@@ -668,7 +669,7 @@
 					"widget" : wi
 				});
 			}
-		}
+		};
 
 		logixwareDashboard.loadWidgets = function(data) {
 			logixwareDashboard.log("entering loadWidgets function", 1);
@@ -708,7 +709,7 @@
 			logixwareDashboard.log("entering init function", 1);
 			// load the widgets as fast as we can. After that add the binding
 			logixwareDashboard.loadLayout();
-		}
+		};
 
 		logixwareDashboard.getWidget = function(id) {
 			logixwareDashboard.log("entering getWidget function", 1);
@@ -718,7 +719,7 @@
 			} else {
 				return null;
 			}
-		}
+		};
 		// Merge in the caller's options with the defaults.
 		var opts = $.extend({}, $.fn.logixwareDashboard.defaults, options);
 		var addOpts = $.extend({}, $.fn.logixwareDashboard.defaults.addWidgetSettings, options.addWidgetSettings);
@@ -794,7 +795,7 @@
 				if (widget.open) {
 					widget.expand();
 				}
-			}
+			};
 			widget.setTitle = function(newTitle) {
 				logixwareDashboard.log("entering setTitle function", 1);
 				widget.title = newTitle;
@@ -806,7 +807,7 @@
 						"widget" : widget
 					});
 				}
-			}
+			};
 			widget.collapse = function() {
 				logixwareDashboard.log("entering collapse function", 1);
 				widget.open = false;
@@ -923,7 +924,7 @@
 				});
 			}
 			if (r == null) {
-				r = first
+				r = first;
 			}
 			return r;
 		}
