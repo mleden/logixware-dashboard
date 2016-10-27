@@ -27,19 +27,22 @@
 						For a no-fuss install follow these directions:
 						<ol>
 							<li>
-								Copy entire logixware-framework directory to webroot of target server/domain.
+								Create libs directory in webroot of target server/domain (if it doesn't already exist).
 							</li>
 							<li>
-								Point your browser to /lgxw-pages/demo.html and verify that the page renders without browser console errors.
+								Copy <a href="https://github.com/mleden/logixware-dashboard/releases">latest release of logixware-dashboard</a> from GitHub.
 							</li>
 							<li>
-								Copy /lgxw-pages/demo.html to your "pages directory" (e.g., /pages).
+								Open archive (zip or tar.gz) and copy resulting logixware-dashboard directory to libs directory of target server/domain.
 							</li>
 							<li>
-								Point your browser to the copied demo.html (e.g., /pages/demo.html) and verify that the page renders without browser console errors.
+								Point your browser to yourdomain.com/libs/logixware-dashboard/dashboard-demo.html and verify that the "demo dashboard" renders without browser console errors.
 							</li>
 							<li>
-								Start "building out your content" by copying (and modifying) /pages/demo.html and copying (and modifying) /lgxw-data files.
+								Copy libs/logixware-dashboard/dashboard-demo.html to libs/logixware-dashboard/my-dashboard.html.
+							</li>
+							<li>
+								Start "building out your content" by modifying libs/logixware-dashboard/my-dashboard.html.
 							</li>
 						</ol>
                 </div>
@@ -55,10 +58,9 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-						This plugin is largely based upon the architecture implemented in Mark Machielsen's Dashboard Plugin.
-						Please see his comprehensive documentation for details on the use of "High Level Events" and "Clientside Templating".
+						This plugin is based upon the architecture implemented in Mark Machielsen's Dashboard Plugin.
 						<br />
-						For more details, please see:
+						I am no longer able to find any trace of his work.  The link used to be here:
 						<br />
 						<a>http://connect.gxsoftware.com/dashboardplugin/demo/dashboard.html</a>
                 </div>
@@ -74,23 +76,23 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-						<p>
-							The application developer -- and by extension the end-user -- has access to the following 5 "dashboard layouts":
-						</p>
+					<p>
+						The application developer -- and by extension the end-user -- has access to the following 5 "dashboard layouts":
+					</p>
 						<ul class="layoutselection">
-							<li class="layoutchoice" id="layout1" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout1.png')">
+							<li class="layoutchoice layout1" id="layout1" style="background-image: url('img/layout1.png')">
 								layout1
 							</li>
-							<li class="layoutchoice" id="layout2" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout2.png')">
+							<li class="layoutchoice" id="layout2" style="background-image: url('img/layout2.png')">
 								layout2
 							</li>
-							<li class="layoutchoice" id="layout3" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout3.png')">
+							<li class="layoutchoice" id="layout3" style="background-image: url('img/layout3.png')">
 								layout3
 							</li>
-							<li class="layoutchoice" id="layout4" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout4.png')">
+							<li class="layoutchoice" id="layout4" style="background-image: url('img/layout4.png')">
 								layout4
 							</li>
-							<li class="layoutchoice" id="layout5" style="background-image: url('../lgxw-libs/jq-logixware-dashboard/img/layout5.png')">
+							<li class="layoutchoice" id="layout5" style="background-image: url('img/layout5.png')">
 								layout5
 							</li>
 						</ul>
@@ -128,23 +130,8 @@
 							In particular, JSON attributes that are "non-native to the plugin", must be placed in the JSON record's "metadata".
 						</p>
 						<p>
-							Create "custom widgets" in /widgets, either from scratch or by copying and modifying the demo widgets.
+							Add "custom widgets" to your own "widgets directory" (e.g., my-widgets), either by creating from scratch or by copying and modifying the demo widgets.
 						</p>
-						Each widget "inherits" the following functionality:
-						<ol>
-							<li>
-								Widget Header
-							</li>
-							Represents standard functionality including a title, controls and widget menu.
-							<li>
-								Widget Body
-							</li>
-							Represents premary data/functionality unique to this widget.
-							<li>
-								(Optional) Widget Footer
-							</li>
-							Represents secondary functionality unique to this widget.
-						</ol>
                 </div>
             </div>
         </div>

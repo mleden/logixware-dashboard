@@ -15,9 +15,10 @@
 <!--
 		<script src="/backups/logixware-framework-2.0.4/libs/d3-core/d3.v3.min.js" type="text/javascript"></script>
 -->		
+<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+<!--
     <script src="http://d3js.org/d3.v2.js"></script>		
-<!--		
-		<script src="/backups/logixware-framework-2.0.4/libs/d3/tree/d3.v3.min.js" type="text/javascript"></script>
+		<script src="http://www.thisbeautifulgame.com/backups/logixware-framework-2.0.4/libs/d3/tree/d3.v3.min.js" type="text/javascript"></script>
 -->		
 		
 		<!-- End -->
@@ -97,7 +98,7 @@
 			var vis = d3.select("#chart").append("svg").attr("width", width + margin.right + margin.left).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //			d3.json("../lgxw-widgets/data/tournament-bracket.json", function(json) {
-			d3.json("http://www.thisbeautifulgame.com/lgxw-libs/jq-logixware-dashboard-3.0/dashboard-demo-widgets/data/tournament-bracket.json", function(json) {
+			d3.json("../data/tournament-bracket.json", function(json) {
 				root = json;
 				root.x0 = height / 2;
 				root.y0 = width / 2;
@@ -114,7 +115,7 @@
 					node.children = getChildren(node);
 					if (node.children)
 						node.children.forEach(rebuildChildren);
-				}
+				};
 				rebuildChildren(root);
 				root.isRight = false;
 				update(root);
@@ -232,9 +233,7 @@
 					}
 					update(source);
 				}
-
 			}
-
 		</script>
 		<!-- End -->
 
@@ -242,8 +241,11 @@
 
 	<body>
 		<!-- Much of the "widget markup" is maintained in the templates for simplicity. -->
+<!--
 		<div class="box-body">
+-->			
 			<div id="chart"></div>
+<!--			
 		</div><!-- /.box-body -->
 	</body>
 
