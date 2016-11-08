@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+-- MWE: This is the Logixware Dashboard Widget Template.
+-- It should be used as the starting point for creating a new Widget.
+!-->
+<html>
+	<head>
+		<!-- Load any resources/assets unique to this widget. -->
+
+		<!-- jQuery core assets from CDN -->
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js" integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
+
+		<!-- Bootstrap 3 assets from CDN -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- End -->
+
+		<!-- Initialize any resources/assets unique to this widget. -->
+		<script type="text/javascript">
+function cycleImages(){
+      var $active = $('#cycler .active');
+      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+      $next.css('z-index',2);//move the next image up the pile
+      $active.fadeOut(1500,function(){//fade out the top image
+	      $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+      });
+    }
+
+$(document).ready(function(){
+// run every 4s
+setInterval('cycleImages()', 4000);
+});		
+		</script>
+<style type="text/css" media="screen">
+#cycler{position:relative;}
+/*
+#cycler img{position:absolute;z-index:1;background-color:white}
+#cycler img{position:absolute;z-index:1;background-color:white;image-orientation: 90deg}
+*/
+#cycler img{position:absolute;z-index:1;background-color:white;image-orientation: from-image;width:506px;}
+#cycler img.active{z-index:3;}
+</style>		
+		<!-- End -->
+
+	</head>
+
+<body>
+		<!-- Much of the "widget markup" is maintained in the templates for simplicity. -->
+<!--
+	<div id="cycler">
+		<img class="active" src="img/Gallery1.jpg" alt="Hoverfly on a green leaf" title="Hoverfly on a green leaf" width="506" height="337" />
+		<img src="img/Gallery11.jpg" alt="Fly on a pink flower" title="Fly on a pink flower" width="506" height="337"  />
+		<img src="img/Gallery10.jpg" alt="Insect on a leaf" title="Platycheirus granditarsus (I think) on a leaf" width="506" height="337"  />
+		<img src="img/Gallery12.jpg" alt="Fly" title="Blue bottle fly on a green leaf" width="506" height="337"  />		
+	</div>
+-->	
+	<div id="cycler">
+		<img class="active" src="img/garden-timelapse/20110108.jpg" alt="Hoverfly on a green leaf" title="Hoverfly on a green leaf" />
+		<img src="img/garden-timelapse/20110202.jpg" alt="Fly on a pink flower" title="Fly on a pink flower"  />
+		<img src="img/garden-timelapse/20110304.jpg" alt="Insect on a leaf" title="Platycheirus granditarsus (I think) on a leaf"  />
+		<img src="img/garden-timelapse/20110417.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20110504.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20130107.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20130422.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20130603.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20130916.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20130917.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20131104.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20140217.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20140324.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20140512.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20140609.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20140630.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20141208.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20150202.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20150309.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20150406.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20150608.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20151207.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+		<img src="img/garden-timelapse/20160906.jpg" alt="Fly" title="Blue bottle fly on a green leaf" />		
+	</div>
+</body>
+
+</html>

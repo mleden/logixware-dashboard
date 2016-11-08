@@ -67,6 +67,18 @@
 				"architecture": "INDEPENDENT",
 				"column": "third",
 				"creator": "Logixware",
+				"description": "Independent widget that includes image crossfade cycler.",
+				"email": "info@logixware.com",
+				"image": "img/widget1.png",
+				"open": true,
+				"title": "Demo Image Crossfade Cycler",
+				"url": "dashboard-demo-widgets/independent-image-crossfade.html"
+			},
+			{
+				"id": "IND-0003",
+				"architecture": "INDEPENDENT",
+				"column": "third",
+				"creator": "Logixware",
 				"description": "Independent widget that includes static text.",
 				"email": "info@logixware.com",
 				"image": "img/widget1.png",
@@ -75,7 +87,7 @@
 				"url": "dashboard-demo-widgets/independent-static-text.html"
 			},
 			{
-				"id": "IND-0004",
+				"id": "IND-0005",
 				"architecture": "INDEPENDENT",
 				"column": "third",
 				"creator": "Logixware",
@@ -87,7 +99,7 @@
 				"url": "dashboard-demo-widgets/independent-static-datatables.html"
 			},
 			{
-				"id": "IND-0005",
+				"id": "IND-0006",
 				"architecture": "INDEPENDENT",
 				"column": "third",
 				"creator": "Logixware",
